@@ -25,7 +25,6 @@ public class AndOrXor {
 		// What is the value of 5 | 9?
 		num = 5 | 9;
 		System.out.println(num); // This prints 13
-		
 		// 5     = 0 1 0 1
 		// 9     = 1 0 0 1
 		// 5 | 9 = 1 1 0 1  <--If there is a 1 in the 5 or 9 column, it produces a 1 in the same column in the result.
