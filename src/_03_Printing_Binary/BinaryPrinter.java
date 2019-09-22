@@ -13,6 +13,7 @@ public class BinaryPrinter {
 		long f = 34398453;
 		BinaryPrinter bp = new BinaryPrinter();
 		bp.printByteBinary(a);
+		bp.printShortBinary(e);
 		bp.printIntBinary(w);
 		bp.printLongBinary(f);
 	

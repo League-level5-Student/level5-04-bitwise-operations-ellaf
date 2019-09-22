@@ -34,8 +34,7 @@ public class Base64DecoderTester {
 		answer[1] = (byte) 255;
 		answer[2] = (byte) 255;
 		check = Base64Decoder.convert4CharsTo24Bits("////");
-		// 111.111 111.111 111.111 111.111
-		// 1111.1111 1111.1111 1111.1111
+		// 111.111 111.111 111.111 111.111		// 1111.1111 1111.1111 1111.1111
 		assertArrayEquals(answer, check);
 
 		answer[0] = (byte) 7;
