@@ -50,10 +50,25 @@ public class Base64Decoder {
 	}
 	
 	//2. Complete this method so that it will take in a string that is 4 
-	//   characters long and return an array of 3 bytes (24 bits). The byte 
+	//   characters long and return an array of 3 bytes (24 bits). The byte  >>  | & ^
 	//   array should be the binary value of the encoded characters.
+
 	public static byte[] convert4CharsTo24Bits(String s){
-		ArrayList<String> al = new ArrayList<String>();
+		byte[] b = new byte[4];
+		int counter = 0;
+		for (int i = 0; i < s.length(); i++) {
+		char a = s.charAt(i);
+		base
+		for (int j = 0; j < base64Chars.length; j++) {
+		if(base64Chars[i] == a) {
+		
+		b[counter] = (byte)base64Chars[i].ge
+		}else {
+			
+		}
+		}
+		counter ++;
+		}
 		
 		
 		
