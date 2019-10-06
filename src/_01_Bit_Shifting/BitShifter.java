@@ -5,6 +5,8 @@ public class BitShifter {
 		// 1. Jot down the value of num in binary.
 		int num = 4;
 		int numShifted = num << 1;
+		System.out.println(num);
+		System.out.println("1 0 0");
 		
 		// 2. Print the value of numShifted, and convert that value to binary.
 		System.out.println(numShifted);
@@ -16,5 +18,20 @@ public class BitShifter {
 		System.out.println(numShifted2);
 		System.out.println("1 0 0 0 0 0");
 		// FYI: Binary values can be shifted to the right as well using the >> operator.	
+		
+		int numRight = num >> 1;
+		System.out.println(numRight);
+		System.out.println("1 0");
+		
+		int num2 = 3;
+		System.out.println(num2);
+		System.out.println("1 1");
+		
+		int num2s = num2 << 2;
+		System.out.println(num2s);
+		System.out.println("1 1 0 0");
+		
+		
+		
 	}
 }

@@ -3,6 +3,7 @@ package _04_Base64_Decoder;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Base64;
 
 public class Base64Decoder {
 	/*
@@ -54,30 +55,66 @@ public class Base64Decoder {
 	//   array should be the binary value of the encoded characters.
 
 	public static byte[] convert4CharsTo24Bits(String s){
-		byte[] b = new byte[4];
-		int counter = 0;
-		for (int i = 0; i < s.length(); i++) {
-		char a = s.charAt(i);
-		base
-		for (int j = 0; j < base64Chars.length; j++) {
-		if(base64Chars[i] == a) {
+	/*Base64Decoder decoder = new Base64Decoder();
+	ArrayList<String> lett = new ArrayList<String>();
+	ArrayList<Character> nums = new ArrayList<Character>();
+	for (int i = 0; i < 4; i++) {
+		lett.add(s.substring(i,i+1));
+	}
+	for (int i = 0; i < lett.size(); i++) {
+	for (int j = 0; j < base64Chars.length; j++) {
+	if(lett.get(i).equals(base64Chars[j])) {
+	nums.add(base64Chars[j]);
+	}
+	}
+	String all = "";
+	for (int j = 0; j < nums.size(); j++) {
+	all += "" + decoder.convertIntBinary(nums.get(i));
+	}
+	byte[] fin = {0,0,0};
+	}*/
 		
-		b[counter] = (byte)base64Chars[i].ge
-		}else {
-			
-		}
-		}
-		counter ++;
-		}
-		
-		
-		
+	
 	return null;
 	}
 	
 	//3. Complete this method so that it takes in a string of any length
 	//   and returns the full byte array of the decoded base64 characters.
 	public static byte[] base64StringToByteArray(String file) {
-		return null;
+		byte[] c = Base64.getDecoder().decode(file);
+		return c;
 	}
-}
+	
+	public int convertIntBinary(int n) {
+		int ag = n;
+		//System.out.println(ag);
+		int num = 1;
+		ArrayList<Integer> a = new ArrayList<Integer>(); 
+		ArrayList<Integer> rev = new ArrayList<Integer>();
+		ArrayList<Integer> binary = new ArrayList<Integer>();
+		while(num <= n) {
+		a.add(num);
+		num = num*2;
+		}
+		for (int i = a.size()-1; i > -1; i--) {
+			rev.add(a.get(i));
+		}
+		for (int i = 0; i < rev.size(); i++) {
+		//System.out.println(ag);
+		if(rev.get(i) <= ag) {
+		binary.add(1);
+		ag -= rev.get(i);
+		}else {
+		binary.add(0);
+		}
+		}
+		String end = "";
+		for (int i = 0; i < binary.size(); i++) {
+		end += ""+binary.get(i);
+		}
+		int endI = Integer.parseInt(end);
+		return endI;
+	}
+	
+	}
+
