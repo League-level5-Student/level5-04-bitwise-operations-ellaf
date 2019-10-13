@@ -29,11 +29,13 @@ public class Base64Decoder {
 
 	
 	final static char[] base64Chars = {
-		'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 
-		'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-		'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
-		'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-		'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'
+		'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 
+		'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 
+		'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd',
+		'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
+		'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 
+		'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', 
+		'8', '9', '+', '/'
 	};
 	
 	//1. Complete this method so that it returns the the element in
@@ -55,6 +57,32 @@ public class Base64Decoder {
 	//   array should be the binary value of the encoded characters.
 
 	public static byte[] convert4CharsTo24Bits(String s){
+		
+	char[] chars = new char[4];
+	int[] base64 = new int[4];
+	String[] str = new String[4];
+	for (int i = 0; i < s.length(); i++) {
+		chars[i] = s.charAt(i);
+	}
+	for (int i = 0; i < chars.length; i++) {
+		for (int j = 0; j < base64Chars.length; j++) {
+			if(chars[i] == base64Chars[j]) {
+				base64[i] = j;
+			}
+		}
+	}
+
+	for (int i = 0; i < base64.length; i++) {
+		str[i] = Integer.toBinaryString(base64[i]);
+		int shiftVal = 6 - str[i].length();
+
+	
+		
+	}
+	
+	
+		
+		
 	/*Base64Decoder decoder = new Base64Decoder();
 	ArrayList<String> lett = new ArrayList<String>();
 	ArrayList<Character> nums = new ArrayList<Character>();
